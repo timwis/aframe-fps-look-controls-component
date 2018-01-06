@@ -3,9 +3,9 @@
 [![Version](http://img.shields.io/npm/v/aframe-fps-look-controls-component.svg?style=flat-square)](https://npmjs.org/package/aframe-fps-look-controls-component)
 [![License](http://img.shields.io/npm/l/aframe-fps-look-controls-component.svg?style=flat-square)](https://npmjs.org/package/aframe-fps-look-controls-component)
 
-Move the mouse to look around, without needing to hold the button down.
+[A-Frame](https://aframe.io) component to enable first-person shooter (FPS)-style mouse looking: move the mouse to look around, without needing to hold the button down. 
 
-For [A-Frame](https://aframe.io).
+Heavily based on prior art by [@cemkod](https://github.com/cemkod/aframe-fps-look-component).
 
 ### API
 
