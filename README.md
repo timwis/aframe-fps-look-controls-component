@@ -11,7 +11,7 @@ For [A-Frame](https://aframe.io).
 
 | Property | Description | Default Value |
 | -------- | ----------- | ------------- |
-|          |             |               |
+| user-height | How much height to add to the camera | 1.6 |
 
 ### Installation
 
