@@ -51,8 +51,7 @@ AFRAME.registerComponent('fps-look-controls', {
       sceneEl.addEventListener('render-target-loaded', this.addEventListeners)
       return
     }
-    // canvasEl.onclick = requestPointerLock
-    canvasEl.onclick = this.captureMouse.bind(this)
+    canvasEl.onclick = requestPointerLock
   },
 
   removeEventListeners: function () {
@@ -73,26 +72,15 @@ AFRAME.registerComponent('fps-look-controls', {
     console.trace(event)
   },
 
-  captureMouse: function (evt) {
-    this.previousMouseEvent = evt
-    requestPointerLock(evt)
-  },
-
   onMouseMove: function (event) {
     var pitchObject = this.pitchObject
     var yawObject = this.yawObject
-    var previousMouseEvent = this.previousMouseEvent
     var movementX
     var movementY
 
-     // Calculate delta.
-    movementX = (event.movementX || event.mozMovementX)
-    movementY = (event.movementY || event.mozMovementY)
-    if (movementX === undefined || movementY === undefined) {
-      movementX = event.screenX - previousMouseEvent.screenX
-      movementY = event.screenY - previousMouseEvent.screenY
-    }
-    this.previousMouseEvent = event
+    // Calculate delta.
+    movementX = (event.movementX || event.mozMovementX) || 0
+    movementY = (event.movementY || event.mozMovementY) || 0
 
     // Calculate rotation.
     yawObject.rotation.y -= movementX * 0.002
